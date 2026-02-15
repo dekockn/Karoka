@@ -71,11 +71,6 @@
             border-color: var(--ocean-light);
         }
         
-        .service-card.active {
-            border-color: var(--ocean-deep);
-            background: linear-gradient(135deg, rgba(26,95,122,0.05) 0%, rgba(87,197,182,0.05) 100%);
-        }
-        
         .service-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -335,7 +330,7 @@
                 </div>
             </div>
 
-            <!-- Important Notes -->
+            <!-- Important Notes shown on main view -->
             <div style="background: linear-gradient(135deg, var(--coral) 0%, #d96941 100%); padding: 2.5rem; border-radius: 15px; color: white; text-align: center; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(230, 126, 80, 0.3);">
                 <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">🎁 Special NGO Discounts</h3>
                 <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">Local NGOs: 40% discount</p>
@@ -395,7 +390,7 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>Note:</strong> Moving from A2+/B1/B2 to C1/C2 levels. Lessons for these levels are prioritised. Lower-level clients (A1–A2) considered individually based on availability.
+                    <strong>Note:</strong> Moving from A2+/B1/B2 to C1/C2 levels.
                 </div>
 
                 <button class="back-button" onclick="backToServices()">← View All Services</button>
@@ -746,8 +741,13 @@
 
     <script>
         function showRates(serviceId) {
-            // Hide service selector
+            // Hide service selector and notes
             document.getElementById('serviceSelector').style.display = 'none';
+            document.querySelectorAll('.container > div[style*="background"]').forEach(el => {
+                if (!el.classList.contains('rates-display')) {
+                    el.style.display = 'none';
+                }
+            });
             
             // Hide all rates displays
             document.querySelectorAll('.rates-display').forEach(el => {
@@ -764,6 +764,13 @@
         function backToServices() {
             // Show service selector
             document.getElementById('serviceSelector').style.display = 'grid';
+            
+            // Show notes
+            document.querySelectorAll('.container > div[style*="background"]').forEach(el => {
+                if (!el.classList.contains('rates-display')) {
+                    el.style.display = 'block';
+                }
+            });
             
             // Hide all rates displays
             document.querySelectorAll('.rates-display').forEach(el => {
