@@ -35,7 +35,44 @@
         th { font-weight: 600; }
         .price { font-weight: 600; color: var(--coral); }
         tbody tr:hover { background: var(--grey-light); }
-        @media (max-width: 768px) { .nav-links { display: none; } .page-title { font-size: 2.5rem; } table { font-size: 0.85rem; } }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .page-title { font-size: 2.5rem; } 
+            
+            table { 
+                font-size: 0.75rem; 
+                min-width: 800px;
+            }
+            
+            th, td { 
+                padding: 0.6rem 0.4rem; 
+                white-space: nowrap;
+            }
+            
+            .table-wrapper {
+                border: 2px solid var(--ocean-light);
+            }
+            
+            .table-wrapper::after {
+                content: '← Swipe to see more →';
+                display: block;
+                text-align: center;
+                padding: 0.8rem;
+                background: var(--ocean-light);
+                color: white;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+        }
     
         /* Mobile Menu */
         .mobile-menu-toggle {
@@ -150,6 +187,7 @@
         <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">Rates per Hour (January 2026) — All rates in Ariary (Ar)</p>
 
         <h2 style="color: var(--ocean-deep); margin: 3rem 0 1.5rem; font-size: 2rem;">English Lessons (per hour)</h2>
+        <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
@@ -205,8 +243,10 @@
                 </tr>
             </tbody>
         </table>
+        </div>
 
         <h2 style="color: var(--ocean-deep); margin: 4rem 0 1.5rem; font-size: 2rem;">Consultancy (rates per hour)</h2>
+        <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
