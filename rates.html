@@ -24,62 +24,18 @@
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--ocean-deep); }
-        .main-content { margin-top: 80px; padding: 5rem 5%; min-height: calc(100vh - 200px); }
-        .container { max-width: 1400px; margin: 0 auto; }
-        .page-title { font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 3rem; text-align: center; }
+        .main-content { margin-top: 80px; padding: 3rem 5%; min-height: calc(100vh - 200px); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .page-title { font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 1rem; text-align: center; }
+        .page-subtitle { text-align: center; font-size: 1.2rem; color: var(--charcoal); opacity: 0.8; margin-bottom: 4rem; }
         footer { background: var(--charcoal); color: var(--white); text-align: center; padding: 3rem 5%; }
         .footer-text { opacity: 0.7; font-size: 0.95rem; }
-        table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--white); }
-        thead { background: var(--ocean-deep); color: var(--white); }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        th { font-weight: 600; }
-        .price { font-weight: 600; color: var(--coral); }
-        tbody tr:hover { background: var(--grey-light); }
-        
-        .table-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-radius: 10px;
-        }
-        
-        @media (max-width: 768px) { 
-            .nav-links { display: none; } 
-            .page-title { font-size: 2.5rem; } 
-            
-            table { 
-                font-size: 0.75rem; 
-                min-width: 800px;
-            }
-            
-            th, td { 
-                padding: 0.6rem 0.4rem; 
-                white-space: nowrap;
-            }
-            
-            .table-wrapper {
-                border: 2px solid var(--ocean-light);
-            }
-            
-            .table-wrapper::after {
-                content: '← Swipe to see more →';
-                display: block;
-                text-align: center;
-                padding: 0.8rem;
-                background: var(--ocean-light);
-                color: white;
-                font-size: 0.85rem;
-                font-weight: 600;
-            }
-        }
-    
         
         .logo-container {
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            text-decoration: none;
         }
         
         .logo-text {
@@ -89,6 +45,147 @@
             color: #57c5b6;
             letter-spacing: 0.05em;
             text-decoration: none;
+        }
+        
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: var(--ocean-light);
+        }
+        
+        .service-card.active {
+            border-color: var(--ocean-deep);
+            background: linear-gradient(135deg, rgba(26,95,122,0.05) 0%, rgba(87,197,182,0.05) 100%);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-size: 1.5rem;
+            color: var(--ocean-deep);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+        
+        /* Rates Display */
+        .rates-display {
+            display: none;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .rates-display.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .rates-display h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .pricing-section {
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-section h3 {
+            color: var(--sand-warm);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .price-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .price-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sand-warm);
+        }
+        
+        .price-unit {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .note-box {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--sand-warm);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: white;
+            color: var(--ocean-deep);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         /* Mobile Menu */
@@ -140,15 +237,15 @@
             background: var(--grey-light);
             color: var(--ocean-deep);
         }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: block;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-toggle { display: block; }
+            .page-title { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .rates-display { padding: 2rem 1.5rem; }
+            .rates-display h2 { font-size: 2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -160,36 +257,515 @@
                 <span class="logo-text">KAROKA</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="services.html" >Services</a></li>
-                <li><a href="rates.html" class='active'>Rates</a></li>
-                <li><a href="policies.html" >Policies</a></li>
-                <li><a href="about.html" >About</a></li>
-                <li><a href="contact.html" >Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rates.html" class="active">Rates</a></li>
+                <li><a href="policies.html">Policies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
         </div>
     </nav>
     
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="services.html" >Services</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="rates.html" class="active">Rates</a></li>
-            <li><a href="policies.html" >Policies</a></li>
-            <li><a href="about.html" >About</a></li>
-            <li><a href="contact.html" >Contact</a></li>
+            <li><a href="policies.html">Policies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
-    
+
+    <div class="main-content">
+        <div class="container">
+            <h1 class="page-title">RATES</h1>
+            <p class="page-subtitle">Select a service to view rates (January 2026)</p>
+
+            <!-- Service Selection -->
+            <div class="services-grid" id="serviceSelector">
+                <div class="service-card" onclick="showRates('english-lessons')">
+                    <div class="service-icon">📚</div>
+                    <h3 class="service-name">English Lessons</h3>
+                    <p class="service-desc">Individual, pairs, and group classes for all levels</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('exam-prep')">
+                    <div class="service-icon">🎓</div>
+                    <h3 class="service-name">Exam Preparation</h3>
+                    <p class="service-desc">IELTS, Cambridge, French Baccalaureate, and more</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('classroom-teaching')">
+                    <div class="service-icon">👩‍🏫</div>
+                    <h3 class="service-name">Classroom Teaching</h3>
+                    <p class="service-desc">Online, homeschooling, and school-based teaching</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('business-english')">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-name">Business English</h3>
+                    <p class="service-desc">Professional and service-industry English</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('curriculum')">
+                    <div class="service-icon">📋</div>
+                    <h3 class="service-name">Curriculum Development</h3>
+                    <p class="service-desc">Educational consultancy and curriculum design</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('teacher-training')">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-name">Teacher Training</h3>
+                    <p class="service-desc">Pedagogy support for English teachers</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('school-management')">
+                    <div class="service-icon">🏫</div>
+                    <h3 class="service-name">School Management</h3>
+                    <p class="service-desc">Systems review and consultancy services</p>
+                </div>
+
+                <div class="service-card" onclick="showRates('proofreading')">
+                    <div class="service-icon">✍️</div>
+                    <h3 class="service-name">Proofreading/Editing</h3>
+                    <p class="service-desc">Academic and professional document editing</p>
+                </div>
+            </div>
+
+            <!-- English Lessons Rates -->
+            <div class="rates-display" id="english-lessons">
+                <h2>📚 English Lessons</h2>
+                
+                <div class="pricing-section">
+                    <h3>Lessons 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Course of 6+ Lessons (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">25,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Note:</strong> Moving from A2+/B1/B2 to C1/C2 levels. Lessons for these levels are prioritised. Lower-level clients (A1–A2) considered individually based on availability.
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Exam Prep Rates -->
+            <div class="rates-display" id="exam-prep">
+                <h2>🎓 Exam Preparation</h2>
+                
+                <div class="pricing-section">
+                    <h3>Lessons 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">45,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Course of 6+ Lessons (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Certifications:</strong> IELTS, TOESL, Cambridge, Pearson PTE Academic, LanguageCert International ESOL SELT, CNED, French Baccalaureate, Ev@lang
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Classroom Teaching Rates -->
+            <div class="rates-display" id="classroom-teaching">
+                <h2>👩‍🏫 Classroom Teaching</h2>
+                
+                <div class="pricing-section">
+                    <h3>Lessons 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual (online/homeschool)</div>
+                            <div class="price-amount">45,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (schools)</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+</div>
+                            <div class="price-amount">60,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Course of 6+ Lessons (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual (online/homeschool)</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (schools)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+</div>
+                            <div class="price-amount">55,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Business English Rates -->
+            <div class="rates-display" id="business-english">
+                <h2>💼 Business English</h2>
+                
+                <div class="pricing-section">
+                    <h3>Lessons 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Course of 6+ Lessons (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups 3+ (per person)</div>
+                            <div class="price-amount">25,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Includes:</strong> Service industry English and training for English teachers
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Curriculum Development Rates -->
+            <div class="rates-display" id="curriculum">
+                <h2>📋 Curriculum Development</h2>
+                
+                <div class="pricing-section">
+                    <h3>Sessions 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">45,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Sessions 6+ (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>NGO Discounts:</strong> Local NGOs (40% off) • International NGOs (20% off)
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Teacher Training Rates -->
+            <div class="rates-display" id="teacher-training">
+                <h2>🎯 Teacher Training</h2>
+                
+                <div class="pricing-section">
+                    <h3>Sessions 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Sessions 6+ (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">25,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Focus:</strong> Pedagogy for English teaching and professional development
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- School Management Rates -->
+            <div class="rates-display" id="school-management">
+                <h2>🏫 School Management</h2>
+                
+                <div class="pricing-section">
+                    <h3>Sessions 1-5 (Prepaid at booking)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">45,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>Sessions 6+ (Whole course prepaid)</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Individual</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Pairs (per person)</div>
+                            <div class="price-amount">35,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                        <div class="price-card">
+                            <div class="price-label">Groups (per person)</div>
+                            <div class="price-amount">30,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Services include:</strong> Troubleshooting, systems review, discipline and rewards systems
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+
+            <!-- Proofreading Rates -->
+            <div class="rates-display" id="proofreading">
+                <h2>✍️ Proofreading/Editing</h2>
+                
+                <div class="pricing-section">
+                    <h3>Flexible Pricing</h3>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="price-label">Standard Rate</div>
+                            <div class="price-amount">40,000 Ar</div>
+                            <div class="price-unit">per hour</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>Note:</strong> Pricing is adjustable depending on document complexity and urgency. Contact us for a custom quote.
+                </div>
+
+                <button class="back-button" onclick="backToServices()">← View All Services</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">© 2026 Karoka SARLU | Stat no: 85493 53 2025 0 00087 | NIF No: 3019127147</p>
+        <p class="footer-text" style="margin-top: 1rem;">Professional English Tutoring & Educational Consultancy | Fort Dauphin, Madagascar</p>
+    </footer>
+
     <script>
+        function showRates(serviceId) {
+            // Hide service selector
+            document.getElementById('serviceSelector').style.display = 'none';
+            
+            // Hide all rates displays
+            document.querySelectorAll('.rates-display').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected service rates
+            document.getElementById(serviceId).classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function backToServices() {
+            // Show service selector
+            document.getElementById('serviceSelector').style.display = 'grid';
+            
+            // Hide all rates displays
+            document.querySelectorAll('.rates-display').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
         }
         
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             const menu = document.getElementById('mobileMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
@@ -200,132 +776,5 @@
             }
         });
     </script>
-    
-<div class="main-content">
-    <div class="container">
-        <h1 class="page-title">RATES</h1>
-        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">Rates per Hour (January 2026) — All rates in Ariary (Ar)</p>
-
-        <h2 style="color: var(--ocean-deep); margin: 3rem 0 1.5rem; font-size: 2rem;">English Lessons (per hour)</h2>
-        <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">Service Type</th>
-                    <th colspan="3">Lessons 1-5 (Prepaid at booking)</th>
-                    <th colspan="3">Course of 6+ (Whole course prepaid)</th>
-                </tr>
-                <tr>
-                    <th>Individual</th>
-                    <th>Pairs (per person)</th>
-                    <th>Groups 3+ (per person)</th>
-                    <th>Individual</th>
-                    <th>Pairs (per person)</th>
-                    <th>Groups 3+ (per person)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>English competency: Moving from A2+/B1/B2 to C1/C2*</strong></td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">25,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Preparation for English Certification</strong><br><small>(IELTS, TOESL, Cambridge, Pearson PTE Academic, LanguageCert International ESOL SELT, CNED, French Baccalaureate, Ev@lang)</small></td>
-                    <td class="price">45,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Classroom Teaching (online/homeschooling or schools)</strong></td>
-                    <td class="price">45,000<br><small>(online/homeschooling)</small></td>
-                    <td class="price">40,000<br><small>(schools)</small></td>
-                    <td class="price">60,000</td>
-                    <td class="price">40,000<br><small>(online/homeschooling)</small></td>
-                    <td class="price">35,000<br><small>(schools)</small></td>
-                    <td class="price">55,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Business/Service Industry English</strong><br><small>(including English teachers)</small></td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">25,000</td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
-
-        <h2 style="color: var(--ocean-deep); margin: 4rem 0 1.5rem; font-size: 2rem;">Consultancy (rates per hour)</h2>
-        <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">Service Type</th>
-                    <th colspan="3">Sessions 1-5 (Prepaid at booking)</th>
-                    <th colspan="3">Sessions 6+ (Whole course prepaid)</th>
-                </tr>
-                <tr>
-                    <th>Individual</th>
-                    <th>Pairs (per person)</th>
-                    <th>Groups (per person)</th>
-                    <th>Individual</th>
-                    <th>Pairs (per person)</th>
-                    <th>Groups (per person)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Curriculum Development</strong></td>
-                    <td class="price">45,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Teacher Training: Pedagogy for English Teaching</strong></td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                    <td class="price">25,000</td>
-                </tr>
-                <tr>
-                    <td><strong>School Management</strong><br><small>(Troubleshooting, systems review, discipline/rewards systems)</small></td>
-                    <td class="price">45,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">40,000</td>
-                    <td class="price">35,000</td>
-                    <td class="price">30,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Proofreading/Editing of English documents</strong></td>
-                    <td colspan="6" class="price">40,000 (adjustable depending on complexity and urgency)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="background: #fff3e0; padding: 1.5rem; border-left: 4px solid var(--coral); border-radius: 5px; margin-top: 2rem;">
-            <p><strong>* Lesson Prioritisation:</strong> Lessons for A2+/B1/B2 to C1/C2 clients will be prioritised. Lower-level clients (A1–A2) will be considered individually, depending on tutor availability.</p>
-        </div>
-    </div>
-</div>
-    <footer>
-        <p class="footer-text">© 2026 Karoka SARLU | Stat no: 85493 53 2025 0 00087 | NIF No: 3019127147</p>
-        <p class="footer-text" style="margin-top: 1rem;">Professional English Tutoring & Educational Consultancy | Fort Dauphin, Madagascar</p>
-    </footer>
 </body>
 </html>
