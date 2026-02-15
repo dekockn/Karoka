@@ -280,53 +280,61 @@
             <p class="page-subtitle">Select a service to view rates (January 2026)</p>
 
             <!-- Service Selection -->
-            <div class="services-grid" id="serviceSelector">
-                <div class="service-card" onclick="showRates('english-lessons')">
-                    <div class="service-icon">📚</div>
-                    <h3 class="service-name">English Lessons</h3>
-                    <p class="service-desc">Individual, pairs, and group classes for all levels</p>
+            <div id="serviceSelector">
+                <h2 style="color: var(--ocean-deep); font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">English Lessons</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card" onclick="showRates('english-competency')">
+                        <div class="service-icon">📚</div>
+                        <h3 class="service-name">English Competency</h3>
+                        <p class="service-desc">A2+/B1/B2 to C1/C2 level progression</p>
+                    </div>
+
+                    <div class="service-card" onclick="showRates('exam-prep')">
+                        <div class="service-icon">🎓</div>
+                        <h3 class="service-name">Exam Preparation</h3>
+                        <p class="service-desc">IELTS, Cambridge, French Baccalaureate, and more</p>
+                    </div>
+
+                    <div class="service-card" onclick="showRates('classroom-teaching')">
+                        <div class="service-icon">👩‍🏫</div>
+                        <h3 class="service-name">Classroom Teaching</h3>
+                        <p class="service-desc">Online, homeschooling, and school-based</p>
+                    </div>
+
+                    <div class="service-card" onclick="showRates('business-english')">
+                        <div class="service-icon">💼</div>
+                        <h3 class="service-name">Business English</h3>
+                        <p class="service-desc">Professional and service-industry English</p>
+                    </div>
                 </div>
 
-                <div class="service-card" onclick="showRates('exam-prep')">
-                    <div class="service-icon">🎓</div>
-                    <h3 class="service-name">Exam Preparation</h3>
-                    <p class="service-desc">IELTS, Cambridge, French Baccalaureate, and more</p>
-                </div>
+                <h2 style="color: var(--ocean-deep); font-size: 2.5rem; margin: 4rem 0 2rem; text-align: center;">Consultancy Services</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card" onclick="showRates('curriculum')">
+                        <div class="service-icon">📋</div>
+                        <h3 class="service-name">Curriculum Development</h3>
+                        <p class="service-desc">Educational consultancy and design</p>
+                    </div>
 
-                <div class="service-card" onclick="showRates('classroom-teaching')">
-                    <div class="service-icon">👩‍🏫</div>
-                    <h3 class="service-name">Classroom Teaching</h3>
-                    <p class="service-desc">Online, homeschooling, and school-based teaching</p>
-                </div>
+                    <div class="service-card" onclick="showRates('teacher-training')">
+                        <div class="service-icon">🎯</div>
+                        <h3 class="service-name">Teacher Training</h3>
+                        <p class="service-desc">Pedagogy for English teaching</p>
+                    </div>
 
-                <div class="service-card" onclick="showRates('business-english')">
-                    <div class="service-icon">💼</div>
-                    <h3 class="service-name">Business English</h3>
-                    <p class="service-desc">Professional and service-industry English</p>
-                </div>
+                    <div class="service-card" onclick="showRates('school-management')">
+                        <div class="service-icon">🏫</div>
+                        <h3 class="service-name">School Management</h3>
+                        <p class="service-desc">Systems review and consultancy</p>
+                    </div>
 
-                <div class="service-card" onclick="showRates('curriculum')">
-                    <div class="service-icon">📋</div>
-                    <h3 class="service-name">Curriculum Development</h3>
-                    <p class="service-desc">Educational consultancy and curriculum design</p>
-                </div>
-
-                <div class="service-card" onclick="showRates('teacher-training')">
-                    <div class="service-icon">🎯</div>
-                    <h3 class="service-name">Teacher Training</h3>
-                    <p class="service-desc">Pedagogy support for English teachers</p>
-                </div>
-
-                <div class="service-card" onclick="showRates('school-management')">
-                    <div class="service-icon">🏫</div>
-                    <h3 class="service-name">School Management</h3>
-                    <p class="service-desc">Systems review and consultancy services</p>
-                </div>
-
-                <div class="service-card" onclick="showRates('proofreading')">
-                    <div class="service-icon">✍️</div>
-                    <h3 class="service-name">Proofreading/Editing</h3>
-                    <p class="service-desc">Academic and professional document editing</p>
+                    <div class="service-card" onclick="showRates('proofreading')">
+                        <div class="service-icon">✍️</div>
+                        <h3 class="service-name">Proofreading/Editing</h3>
+                        <p class="service-desc">Academic and professional editing</p>
+                    </div>
                 </div>
             </div>
 
@@ -344,8 +352,8 @@
             </div>
 
             <!-- English Lessons Rates -->
-            <div class="rates-display" id="english-lessons">
-                <h2>📚 English Lessons</h2>
+            <div class="rates-display" id="english-competency">
+                <h2>📚 English Competency</h2>
                 
                 <div class="pricing-section">
                     <h3>Lessons 1-5 (Prepaid at booking)</h3>
@@ -390,7 +398,7 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>Note:</strong> Moving from A2+/B1/B2 to C1/C2 levels.
+                    <strong>Note:</strong> Moving from A2+/B1/B2 to C1/C2 levels. Lessons for these clients are prioritised.
                 </div>
 
                 <button class="back-button" onclick="backToServices()">← View All Services</button>
@@ -443,7 +451,7 @@
                 </div>
 
                 <div class="note-box">
-                    <strong>Certifications:</strong> IELTS, TOESL, Cambridge, Pearson PTE Academic, LanguageCert International ESOL SELT, CNED, French Baccalaureate, Ev@lang
+                    <strong>Preparation for English Certification:</strong> IELTS, TOESL, Cambridge, Pearson PTE Academic, LanguageCert International ESOL SELT, CNED, French Baccalaureate, Ev@lang
                 </div>
 
                 <button class="back-button" onclick="backToServices()">← View All Services</button>
