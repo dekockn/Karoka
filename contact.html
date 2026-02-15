@@ -29,31 +29,12 @@
         .page-title { font-size: 3.5rem; color: var(--ocean-deep); margin-bottom: 3rem; text-align: center; }
         footer { background: var(--charcoal); color: var(--white); text-align: center; padding: 3rem 5%; }
         .footer-text { opacity: 0.7; font-size: 0.95rem; }
-        table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--white); }
-        thead { background: var(--ocean-deep); color: var(--white); }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        th { font-weight: 600; }
-        .price { font-weight: 600; color: var(--coral); }
-        tbody tr:hover { background: var(--grey-light); }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--ocean-light);
-        }
-        
-        button[type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 95, 122, 0.3);
-        }
-        
-        @media (max-width: 768px) { .nav-links { display: none; } .page-title { font-size: 2.5rem; } table { font-size: 0.85rem; } }
-    
         
         .logo-container {
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            text-decoration: none;
         }
         
         .logo-text {
@@ -63,6 +44,16 @@
             color: #57c5b6;
             letter-spacing: 0.05em;
             text-decoration: none;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--ocean-light);
+        }
+        
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 95, 122, 0.3);
         }
 
         /* Mobile Menu */
@@ -114,15 +105,11 @@
             background: var(--grey-light);
             color: var(--ocean-deep);
         }
-
+        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: block;
-            }
+            .nav-links { display: none; }
+            .mobile-menu-toggle { display: block; }
+            .page-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -134,51 +121,32 @@
                 <span class="logo-text">KAROKA</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="services.html" >Services</a></li>
-                <li><a href="rates.html" >Rates</a></li>
-                <li><a href="policies.html" >Policies</a></li>
-                <li><a href="about.html" >About</a></li>
-                <li><a href="contact.html" class='active'>Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="rates.html">Rates</a></li>
+                <li><a href="policies.html">Policies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
-
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
         </div>
     </nav>
     
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="services.html" >Services</a></li>
-            <li><a href="rates.html" >Rates</a></li>
-            <li><a href="policies.html" >Policies</a></li>
-            <li><a href="about.html" >About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="policies.html">Policies</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </div>
-    
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            if (menu.classList.contains('active') && 
-                !menu.contains(event.target) && 
-                !toggle.contains(event.target)) {
-                menu.classList.remove('active');
-            }
-        });
-    </script>
-    
-<div class="main-content">
-    <div class="container">
-        <h1 class="page-title">CONTACT DETAILS</h1>
-        <div style="max-width: 800px; margin: 0 auto;">
+
+    <div class="main-content">
+        <div class="container">
+            <h1 class="page-title">CONTACT DETAILS</h1>
+            <div style="max-width: 800px; margin: 0 auto;">
             
             <!-- Contact Form -->
             <div style="background: var(--grey-light); padding: 3rem; border-radius: 15px; margin-bottom: 4rem;">
@@ -229,7 +197,7 @@
                     <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
                     <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">Email</h3>
                     <p style="font-size: 1.1rem; font-weight: 600; word-break: break-word;">
-                        <a href="/cdn-cgi/l/email-protection#9df6fceff2f6fccedccfd1c8ddedeff2e9f2f3f0fcf4f1b3fef2f0" style="color: var(--ocean-deep); text-decoration: none;">
+                        <a href="mailto:karokaSARLU@protonmail.com" style="color: var(--ocean-deep); text-decoration: none;">
                             karoka<span style="display:none">REMOVE</span>SARLU<span>@</span>protonmail<span>.</span>com
                         </a>
                     </p>
@@ -248,10 +216,40 @@
                     </a>
                 </div>
             </div>
-            
+
             <div style="margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); color: white; border-radius: 15px; text-align: center;">
                 <h2 style="color: white; margin-bottom: 2rem; font-size: 2rem;">Office Hours</h2>
                 <p style="font-size: 1.1rem; line-height: 2;">
                     <strong>Monday:</strong> 13:00 - 19:00<br>
                     <strong>Tuesday - Thursday:</strong> 08:00 - 19:00<br>
-                    <strong>Friday:</
+                    <strong>Friday:</strong> 08:00 - 13:00<br>
+                    <strong>Saturday:</strong> 09:00 - 12:00
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">© 2026 Karoka SARLU | Stat no: 85493 53 2025 0 00087 | NIF No: 3019127147</p>
+        <p class="footer-text" style="margin-top: 1rem;">Professional English Tutoring & Educational Consultancy | Fort Dauphin, Madagascar</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+        
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                !toggle.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
