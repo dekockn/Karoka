@@ -46,14 +46,141 @@
             text-decoration: none;
         }
 
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--ocean-light);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .form-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%);
+            color: white;
+            border-left: none;
+        }
+
+        .form-card h2 {
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Aptos', sans-serif;
+            background: rgba(255,255,255,0.95);
+        }
+
         input:focus, textarea:focus {
             outline: none;
-            border-color: var(--ocean-light);
+            border-color: var(--sand-warm);
         }
-        
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background: var(--coral);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Aptos', sans-serif;
+        }
+
         button[type="submit"]:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 95, 122, 0.3);
+            box-shadow: 0 8px 20px rgba(230, 126, 80, 0.5);
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--ocean-deep);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--ocean-light);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .hours-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%);
+            color: white;
+            text-align: center;
+            border-left: none;
+        }
+
+        .hours-card h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--coral);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .map-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 126, 80, 0.4);
         }
 
         /* Mobile Menu */
@@ -106,6 +233,15 @@
             color: var(--ocean-deep);
         }
         
+        @media (max-width: 968px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .form-card, .hours-card {
+                grid-column: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-toggle { display: block; }
@@ -145,88 +281,124 @@
 
     <div class="main-content">
         <div class="container">
-            <h1 class="page-title">CONTACT DETAILS</h1>
-            <div style="max-width: 800px; margin: 0 auto;">
-            
-            <!-- Contact Form -->
-            <div style="background: var(--grey-light); padding: 3rem; border-radius: 15px; margin-bottom: 4rem;">
-                <h2 style="color: var(--ocean-deep); margin-bottom: 2rem; text-align: center;">Send us a message</h2>
-                <form action="https://formspree.io/f/mykdwrna" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div>
-                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Name *</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif;">
-                    </div>
-                    
-                    <div>
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Email Address *</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif;">
-                    </div>
-                    
-                    <div>
-                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Message *</label>
-                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif; resize: vertical;"></textarea>
-                    </div>
-                    
-                    <button type="submit" style="background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s ease; font-family: 'Aptos', sans-serif;">
-                        Send Message
-                    </button>
-                </form>
-                
-                <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
-            </div>
-            
-            <script>
-                const form = document.querySelector('form');
-                const statusDiv = document.getElementById('formStatus');
-                
-                form.addEventListener('submit', function(e) {
-                    statusDiv.textContent = 'Sending...';
-                    statusDiv.style.color = 'var(--ocean-deep)';
-                });
-            </script>
-            
-            <h2 style="color: var(--ocean-deep); margin: 4rem 0 2rem; text-align: center; font-size: 2rem;">Or contact us directly</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin: 3rem 0;">
-                <div style="text-align: center; padding: 2rem; background: var(--grey-light); border-radius: 15px;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
-                    <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">WhatsApp</h3>
-                    <p style="font-size: 1.3rem; font-weight: 600;">034 81 915 81</p>
+            <h1 class="page-title">CONTACT US</h1>
+
+            <div class="grid-layout">
+                <!-- Contact Form - Full Width -->
+                <div class="contact-card form-card">
+                    <h2>Send us a message</h2>
+                    <form action="https://formspree.io/f/mqakzqnl" method="POST" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        <div>
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div style="grid-column: 1 / -1;">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div style="grid-column: 1 / -1;">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                    <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: var(--grey-light); border-radius: 15px;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
-                    <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">Email</h3>
-                    <p style="font-size: 1.1rem; font-weight: 600; word-break: break-word;">
-                        <a href="/cdn-cgi/l/email-protection#fb909a8994909aa8baa9b7aebb8b89948f9495969a9297d5989496" style="color: var(--ocean-deep); text-decoration: none;">
-                            karoka<span style="display:none">REMOVE</span>SARLU<span>@</span>protonmail<span>.</span>com
-                        </a>
-                    </p>
+
+                <!-- WhatsApp -->
+                <div class="contact-card">
+                    <a href="https://wa.me/261348191581" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="#25D366">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </div>
+                        <span>+261 34 819 1581</span>
+                    </a>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: var(--grey-light); border-radius: 15px;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📘</div>
-                    <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">Facebook</h3>
-                    <p style="font-size: 1.1rem; font-weight: 600;">Search "English Tutoring and Consultancy Services"</p>
+
+                <!-- Email -->
+                <div class="contact-card">
+                    <a href="mailto:karokasarlu@protonmail.com" class="contact-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--ocean-deep)">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <span style="word-break: break-word;">karokasarlu@protonmail.com</span>
+                    </a>
                 </div>
-                <div style="text-align: center; padding: 2rem; background: var(--grey-light); border-radius: 15px;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
-                    <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">Office Location</h3>
-                    <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem;">Tanambao II<br><small>(Opposite Ecole Bambino)</small><br><small>Fort Dauphin (Toalagnaro), Madagascar</small></p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Ecole+Bambino+Fort+Dauphin+Toalagnaro+Madagascar" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1.5rem; background: var(--ocean-deep); color: white; text-decoration: none; border-radius: 25px; font-size: 0.9rem; transition: all 0.3s ease;">
+
+                <!-- Facebook -->
+                <div class="contact-card">
+                    <a href="https://facebook.com/KarokaSARLU" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="#1877F2">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <span>facebook.com/KarokaSARLU</span>
+                    </a>
+                </div>
+
+                <!-- Website -->
+                <div class="contact-card">
+                    <a href="https://www.karokasarlu.com" class="contact-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--ocean-deep)">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
+                        <span>www.karokasarlu.com</span>
+                    </a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-card">
+                    <a href="https://www.linkedin.com/company/karoka-sarlu" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="#0077B5">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </div>
+                        <span>linkedin.com/company/karoka-sarlu</span>
+                    </a>
+                </div>
+
+                <!-- Office Location -->
+                <div class="contact-card">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--coral)">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span style="color: var(--ocean-deep); font-size: 1.1rem; font-weight: 600;">Tanambao II, Fort Dauphin</span><br>
+                            <small style="opacity: 0.7; font-size: 0.9rem;">(Opposite Ecole Bambino)</small>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Ecole+Bambino+Fort+Dauphin+Toalagnaro+Madagascar" target="_blank" rel="noopener noreferrer" class="map-button">
                         📍 View on Google Maps
                     </a>
                 </div>
-            </div>
 
-            <div style="margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); color: white; border-radius: 15px; text-align: center;">
-                <h2 style="color: white; margin-bottom: 2rem; font-size: 2rem;">Office Hours</h2>
-                <p style="font-size: 1.1rem; line-height: 2;">
-                    <strong>Monday:</strong> 13:00 - 19:00<br>
-                    <strong>Tuesday - Thursday:</strong> 08:00 - 19:00<br>
-                    <strong>Friday:</strong> 08:00 - 13:00<br>
-                    <strong>Saturday:</strong> 09:00 - 12:00
-                </p>
+                <!-- Office Hours - Full Width -->
+                <div class="contact-card hours-card">
+                    <h2>Office Hours</h2>
+                    <p style="font-size: 1.1rem; line-height: 2;">
+                        <strong>Monday:</strong> 13:00 - 19:00<br>
+                        <strong>Tuesday - Thursday:</strong> 08:00 - 19:00<br>
+                        <strong>Friday:</strong> 08:00 - 13:00<br>
+                        <strong>Saturday:</strong> 09:00 - 12:00
+                    </p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -235,7 +407,15 @@
         <p class="footer-text" style="margin-top: 1rem;">Professional English Tutoring & Educational Consultancy | Fort Dauphin, Madagascar</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        const form = document.querySelector('form');
+        const statusDiv = document.getElementById('formStatus');
+        
+        form.addEventListener('submit', function(e) {
+            statusDiv.textContent = 'Sending...';
+            statusDiv.style.color = 'white';
+        });
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
@@ -245,4 +425,11 @@
             const menu = document.getElementById('mobileMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
             if (menu.classList.contains('active') && 
-                !menu.contains(event.target) &
+                !menu.contains(event.target) && 
+                !toggle.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
