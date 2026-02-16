@@ -101,13 +101,13 @@
         }
 
         .hero-logo {
-            width: 300px;
-            max-width: 80%;
+            width: 280px;
+            max-width: 70%;
             margin: 0 auto 1.5rem;
         }
 
         .hero-title {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--white);
             margin-bottom: 0.5rem;
             line-height: 1.3;
@@ -120,61 +120,37 @@
         }
 
         .hero-tagline {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--white);
             font-style: italic;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--coral);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(230, 126, 80, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(230, 126, 80, 0.4);
-        }
-
-        /* Why Choose Section - Compact */
-        .why-choose {
-            padding: 4rem 5%;
+        /* Features Section - Compact Cards */
+        .features {
+            padding: 3rem 5%;
             background: var(--grey-light);
         }
 
-        .section-container {
+        .features-container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--ocean-deep);
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 1.5rem;
-            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             border-left: 4px solid var(--ocean-light);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .feature-card:hover {
@@ -183,20 +159,47 @@
         }
 
         .feature-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.8rem;
         }
 
         .feature-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--ocean-deep);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .feature-text {
             color: var(--charcoal);
             opacity: 0.85;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--coral);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(230, 126, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(230, 126, 80, 0.4);
         }
 
         footer {
@@ -261,6 +264,12 @@
             color: var(--ocean-deep);
         }
 
+        @media (max-width: 1200px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -284,10 +293,6 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
             }
         }
 
@@ -332,46 +337,47 @@
             <h1 class="hero-title">English Tutoring & Educational Consultancy</h1>
             <p class="hero-subtitle">Fort Dauphin (Toalagnaro), Madagascar</p>
             <p class="hero-tagline">Professional. Personalised. Proven results.</p>
-            <a href="contact.html" class="cta-button">Get Started Today</a>
         </div>
     </section>
 
-    <section class="why-choose">
-        <div class="section-container">
-            <h2 class="section-title">Why Choose Karoka?</h2>
-            
+    <section class="features">
+        <div class="features-container">
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎓</div>
                     <h3 class="feature-title">Experienced & Qualified</h3>
-                    <p class="feature-text">30 years of certified teaching experience across three countries and educational systems. Deep understanding of international standards and diverse learner needs.</p>
+                    <p class="feature-text">30 years teaching across three countries and educational systems</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
                     <h3 class="feature-title">Personalised Programmes</h3>
-                    <p class="feature-text">No generic courses. Lessons are tailored to your level, goals, and availability.</p>
+                    <p class="feature-text">Tailored to your level, goals, and availability</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3 class="feature-title">Local & International Reach</h3>
-                    <p class="feature-text">Based in Fort Dauphin, with online services available across Madagascar and internationally.</p>
+                    <h3 class="feature-title">Local & International</h3>
+                    <p class="feature-text">Based in Fort Dauphin, online services across Madagascar and internationally</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Safeguarding & Professional Standards</h3>
-                    <p class="feature-text">UK and Madagascar police checks, safeguarding training, confidentiality, and professional ethics.</p>
+                    <h3 class="feature-title">Professional Standards</h3>
+                    <p class="feature-text">UK and Madagascar police checks, safeguarding training, confidentiality</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📅</div>
-                    <h3 class="feature-title">Flexible Learning Options</h3>
-                    <p class="feature-text">Lessons available weekdays and Saturdays, at Karoka's office, online, or at your home or workplace.</p>
+                    <h3 class="feature-title">Flexible Options</h3>
+                    <p class="feature-text">Weekdays and Saturdays, at office, online, or your location</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="cta-section">
+        <a href="contact.html" class="cta-button">Get Started Today</a>
     </section>
 
     <footer>
