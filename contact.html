@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Karoka English Tutoring</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --ocean-deep: #1a5f7a;
@@ -16,8 +16,8 @@
             --grey-light: #f8f9fa;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--charcoal); line-height: 1.7; }
-        h1, h2, h3 { font-family: 'Crimson Pro', serif; font-weight: 700; }
+        body { font-family: 'Aptos', sans-serif; color: var(--charcoal); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Aptos', sans-serif; font-weight: 700; }
         nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 1.2rem 5%; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo-img { height: 50px; width: auto; }
@@ -38,7 +38,7 @@
         }
         
         .logo-text {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'Aptos', sans-serif;
             font-size: 2rem;
             font-weight: 700;
             color: #57c5b6;
@@ -154,20 +154,20 @@
                 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
                         <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Name *</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'DM Sans', sans-serif;">
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif;">
                     </div>
                     
                     <div>
                         <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Email Address *</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'DM Sans', sans-serif;">
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif;">
                     </div>
                     
                     <div>
                         <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--charcoal);">Message *</label>
-                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'DM Sans', sans-serif; resize: vertical;"></textarea>
+                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Aptos', sans-serif; resize: vertical;"></textarea>
                     </div>
                     
-                    <button type="submit" style="background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s ease; font-family: 'DM Sans', sans-serif;">
+                    <button type="submit" style="background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s ease; font-family: 'Aptos', sans-serif;">
                         Send Message
                     </button>
                 </form>
@@ -197,7 +197,7 @@
                     <div style="font-size: 3rem; margin-bottom: 1rem;">✉️</div>
                     <h3 style="color: var(--ocean-deep); margin-bottom: 0.5rem;">Email</h3>
                     <p style="font-size: 1.1rem; font-weight: 600; word-break: break-word;">
-                        <a href="mailto:karokaSARLU@protonmail.com" style="color: var(--ocean-deep); text-decoration: none;">
+                        <a href="/cdn-cgi/l/email-protection#fb909a8994909aa8baa9b7aebb8b89948f9495969a9297d5989496" style="color: var(--ocean-deep); text-decoration: none;">
                             karoka<span style="display:none">REMOVE</span>SARLU<span>@</span>protonmail<span>.</span>com
                         </a>
                     </p>
@@ -235,7 +235,7 @@
         <p class="footer-text" style="margin-top: 1rem;">Professional English Tutoring & Educational Consultancy | Fort Dauphin, Madagascar</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
@@ -245,11 +245,4 @@
             const menu = document.getElementById('mobileMenu');
             const toggle = document.querySelector('.mobile-menu-toggle');
             if (menu.classList.contains('active') && 
-                !menu.contains(event.target) && 
-                !toggle.contains(event.target)) {
-                menu.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
+                !menu.contains(event.target) &
