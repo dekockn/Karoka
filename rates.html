@@ -47,7 +47,7 @@
             font-family: 'Aptos', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            color: #57c5b6;
+            color: #1a5f7a;
             letter-spacing: 0.05em;
             text-decoration: none;
         }
@@ -61,19 +61,21 @@
         }
         
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, rgba(87, 197, 182, 0.1) 0%, rgba(87, 197, 182, 0.05) 100%);
             border-radius: 15px;
             padding: 1.5rem;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             cursor: pointer;
             transition: all 0.3s ease;
             border: 3px solid transparent;
+            border-left: 4px solid var(--ocean-deep);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-color: var(--ocean-light);
+            border-color: var(--ocean-deep);
+            background: linear-gradient(135deg, rgba(87, 197, 182, 0.15) 0%, rgba(87, 197, 182, 0.08) 100%);
         }
         
         .service-icon {
@@ -352,13 +354,13 @@
             </div>
 
             <!-- Important Notes shown on main view -->
-            <div style="background: linear-gradient(135deg, var(--coral) 0%, #d96941 100%); padding: 2.5rem; border-radius: 15px; color: white; text-align: center; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(230, 126, 80, 0.3);">
+            <div style="background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-light) 100%); padding: 2.5rem; border-radius: 15px; color: white; text-align: center; margin-bottom: 2rem; box-shadow: 0 5px 20px rgba(26, 95, 122, 0.3);">
                 <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">🎁 Special NGO Discounts</h3>
                 <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">Local NGOs: 40% discount</p>
                 <p style="font-size: 1.3rem; font-weight: 600;">International NGOs: 20% discount</p>
             </div>
 
-            <div style="background: var(--grey-light); padding: 1.5rem; border-radius: 10px; margin-bottom: 3rem; border-left: 4px solid var(--ocean-light);">
+            <div style="background: rgba(87, 197, 182, 0.1); padding: 1.5rem; border-radius: 10px; margin-bottom: 3rem; border-left: 4px solid var(--ocean-deep);">
                 <p style="font-size: 0.88rem; color: var(--charcoal); opacity: 0.8;">
                     <strong>* Lesson Prioritisation:</strong> Lessons for A2+/B1/B2 to C1/C2 clients will be prioritised. Lower-level clients (A1–A2) will be considered individually, depending on tutor availability.
                 </p>
